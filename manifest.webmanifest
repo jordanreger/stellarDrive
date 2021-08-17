@@ -1,15 +1,15 @@
 {
-  "short_name": "CRAP",
-  "name": "CarApp/Dashbox",
+  "short_name": "StellarDrive",
+  "name": "StellarDrive",
   "icons": [
     {
-      "src": "https://avatars.githubusercontent.com/u/33134197?s=400&v=4",
-      "type": "image/png",
+      "src": "./stellardrive.svg",
+      "type": "image/svg",
       "sizes": "512x512"
     }
   ],
   "start_url": "/index.html",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#e0e0e0",
+  "background_color": "#101010"
 }
