@@ -1,6 +1,15 @@
 import { LitElement, html } from "lit-element";
 import "latt";
 
+window.onload = () => {
+  console.log("service worker loading");
+  "use strict";
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("../serviceWorker.js");
+  }
+};
+
 class App extends LitElement {
   render() {
     return html`
