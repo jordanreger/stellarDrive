@@ -114,7 +114,7 @@ class Lander extends LitElement {
 
       .time {
         font-family: Inter;
-        font-size: 7.5vw;
+        font-size: 10vw;
         font-weight: 600;
         color: #e0e0e0;
         text-align: center;
@@ -123,7 +123,7 @@ class Lander extends LitElement {
 
       .date {
         font-family: Inter;
-        font-size: 2vw;
+        font-size: 2.5vw;
         font-weight: 600;
         color: #e0e0e0;
         text-align: center;

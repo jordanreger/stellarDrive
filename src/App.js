@@ -28,4 +28,5 @@ class App extends LitElement {
     `;
   }
 }
+
 customElements.get("app-root") || customElements.define("app-root", App);
