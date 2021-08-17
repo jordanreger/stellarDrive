@@ -1,0 +1,10 @@
+"name": "CRAP",
+ "short_name": "CRAP",
+ "theme_color": "#e0e0e0",
+ "background_color": "#101010",
+ "display": "standalone",
+ "Scope": "",
+ "start_url": "/index.html",
+ "icons": [
+   "https://avatars.githubusercontent.com/u/33134197?s=400&v=4",
+ ]
