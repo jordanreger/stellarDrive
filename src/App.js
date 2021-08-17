@@ -26,6 +26,11 @@ class App extends LitElement {
           <br/>
           <latt-link to="/">back</latt-link>
         </latt-route>
+        <latt-route path="/settings">
+          settings
+          <br/>
+          <latt-link to="/">back</latt-link>
+        </latt-route>
         <latt-catch to="/" />
       </latt-router>
     `;
