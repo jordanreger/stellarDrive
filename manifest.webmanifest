@@ -3,9 +3,9 @@
   "name": "stellarDrive",
   "icons": [
     {
-      "src": "https://raw.githubusercontent.com/jordanreger/media/2257c24eb8049fa4b253c14d0df136d366997ff6/stellardrive.svg",
-      "type": "image/svg",
-      "sizes": "450x450"
+      "src": "https://avatars.githubusercontent.com/u/33134197?v=4",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/index.html",
