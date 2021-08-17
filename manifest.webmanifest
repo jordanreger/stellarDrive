@@ -1,6 +1,6 @@
 {
-  "short_name": "StellarDrive",
-  "name": "StellarDrive",
+  "short_name": "stellarDrive",
+  "name": "stellarDrive",
   "icons": [
     {
       "src": "./stellardrive.svg",

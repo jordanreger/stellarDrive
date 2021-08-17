@@ -1,4 +1,4 @@
-let cacheName = "CRAP";
+let cacheName = "stellarDrive";
 let filesToCache = ["/", "./index.html", "./src/App.js", "./src/home.js"];
 
 /* Start the service worker and cache all of the app's content */
