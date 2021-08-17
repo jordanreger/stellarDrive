@@ -2,7 +2,6 @@ import { LitElement, html } from "lit-element";
 import "latt";
 
 window.onload = () => {
-  console.log("service worker loading");
   "use strict";
 
   if ("serviceWorker" in navigator) {
@@ -19,9 +18,13 @@ class App extends LitElement {
         </latt-route>
         <latt-route path="/music">
           music
+          <br/>
+          <latt-link to="/">back</latt-link>
         </latt-route>
         <latt-route path="/maps">
           maps
+          <br/>
+          <latt-link to="/">back</latt-link>
         </latt-route>
         <latt-catch to="/" />
       </latt-router>
