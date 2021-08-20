@@ -168,7 +168,7 @@ class Lander extends LitElement {
 
   firstUpdated(){
     /* get camera */
-    var stream, bg;
+    /*var stream, bg;
     var elements = this.shadowRoot.children[0].children;
     navigator.mediaDevices.getUserMedia({ video: true, facingMode: { exact: "environment" } }).then((stream) => {
       for(var i = 0; i < elements.length; i++){
@@ -179,7 +179,9 @@ class Lander extends LitElement {
       }
     }).catch((error) => {
       console.log(error);
-    })
+    })*/
+
+    console.log(navigator);
 
     /* animations */
     var main, secondary, time;
