@@ -168,7 +168,7 @@ class Lander extends LitElement {
 
   firstUpdated(){
     /* get camera */
-    /*var stream, bg;
+    var stream, bg;
     var elements = this.shadowRoot.children[0].children;
     function getCamera() {
       navigator.mediaDevices.getUserMedia({ video: true, facingMode: { exact: "environment" } }).then((stream) => {
@@ -176,12 +176,13 @@ class Lander extends LitElement {
           if(elements[i].id === "left"){
             bg = elements[i].children[0].children[0];
             bg.srcObject = stream;
+            bg.play();
           }
         }
       });
     }
 
-    getCamera();*/
+    getCamera();
 
     /* animations */
     var main, secondary, time;
