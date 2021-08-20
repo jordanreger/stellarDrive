@@ -170,7 +170,7 @@ class Lander extends LitElement {
     /* get camera */
     var stream, bg;
     var elements = this.shadowRoot.children[0].children;
-    async function getCamera() {
+    function getCamera() {
       navigator.mediaDevices.getUserMedia({ video: true, facingMode: { exact: "environment" } }).then((stream) => {
         for(var i = 0; i < elements.length; i++){
           if(elements[i].id === "left"){
@@ -269,6 +269,7 @@ class Lander extends LitElement {
       <div id="page">
         <div id="left">
           <div id="main">
+            <video id="background" autoplay="true" src=""></video>
           </div>
         </div>
         <div id="right">
