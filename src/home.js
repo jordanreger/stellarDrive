@@ -171,16 +171,20 @@ class Lander extends LitElement {
 
     var stream, bg;
     function getCamera() {
-      navigator.mediaDevices.getUserMedia({ video: true, facingMode: { exact: "environment" } }).then((stream) => {
-        for(var i = 0; i < elements.length; i++){
-          if(elements[i].id === "left"){
-            bg = elements[i].children[0].children[0];
-            bg.srcObject = stream;
-          }
+      for(var i = 0; i < elements.length; i++){
+        if(elements[i].id === "left"){
+          bg = elements[i].children[0].children[0];
+          console.log(bg);
         }
+      }
+      navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
+          bg.srcObject = stream;
+      }).catch(function(error) {
+          console.error("Oops. Something is broken.", error);
       });
     }
-    getCamera();
+
+    window.addEventListener("load", getCamera(), false);
 
     /* animations */
     var main, secondary, time;
@@ -267,7 +271,7 @@ class Lander extends LitElement {
       <div id="page">
         <div id="left">
           <div id="main">
-            <video id="background" autoplay="true"></video>
+            <video id="background" autoplay="true" playsinline></video>
           </div>
         </div>
         <div id="right">
