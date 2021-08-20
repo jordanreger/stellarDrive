@@ -253,6 +253,8 @@ class Lander extends LitElement {
       <div id="page">
         <div id="left">
           <div id="main">
+            test
+            <video autoplay="true" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"></video>
           </div>
         </div>
         <div id="right">
