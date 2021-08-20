@@ -45,6 +45,7 @@ class Lander extends LitElement {
           "left right";
         width: 100%;
         height: 100%;
+        overflow: hidden;
       }
 
       #left {
@@ -163,6 +164,14 @@ class Lander extends LitElement {
         border-radius: 10px;
         cursor: pointer;
       }
+
+      #background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        object-fit: fill;
+      }
     `;
   }
 
@@ -172,9 +181,8 @@ class Lander extends LitElement {
     var stream, bg;
     function getCamera() {
       for(var i = 0; i < elements.length; i++){
-        if(elements[i].id === "left"){
-          bg = elements[i].children[0].children[0];
-          console.log(bg);
+        if(elements[i].id === "background"){
+          bg = elements[i];
         }
       }
       navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
@@ -186,45 +194,6 @@ class Lander extends LitElement {
 
     window.addEventListener("load", getCamera(), false);
 
-    /* animations */
-    var main, secondary, time;
-    var left, right;
-    for(var i = 0; i < elements.length; i++){
-      if(elements[i].id === "left"){
-        left = elements[i];
-        for(var j = 0; j < left.children.length; j++){
-          main = left.children[0];
-        }
-      }
-      if(elements[i].id === "right"){
-        right = elements[i];
-        for(var k = 0; k < right.children.length; k++){
-          time = right.children[0].children[0];
-          secondary = right.children[0].children[1];
-        }
-      }
-    }
-
-    main.addEventListener("click", e => {
-      /*time.style.display = "none";
-      main.style.position = "fixed";
-      main.style.height = "calc(100% - 9.15%)";
-      main.style.width = "100%";
-      main.style.top = "4.5%";
-      main.style.left = "2.15%";
-      main.style.right = "2.15%";
-      main.style.bottom = "4.5%";
-      main.style.transform = "none";*/
-      window.location.href = "/music";
-    })
-
-    secondary.addEventListener("click", e => {
-      /*time.style.display = "none";*/
-      window.location.href = "/maps";
-    })
-
-    /* /animations */
-
     /* clock */
     let ls = window.localStorage;
 
@@ -232,7 +201,7 @@ class Lander extends LitElement {
       ls.setItem("method", "12");
     }
 
-    let timeDiv = this.shadowRoot.children[0].children[1].children[0].children[0].children[0].children;
+    let timeDiv = elements[2].children[0].children[0].children[0].children;
     let timeDisplay = timeDiv[0];
     let dateDisplay = timeDiv[1];
 
@@ -269,9 +238,9 @@ class Lander extends LitElement {
     if (window.location.pathname === "/") {
       return html`
       <div id="page">
+        <video id="background" autoplay="true" playsinline></video>
         <div id="left">
           <div id="main">
-            <video id="background" autoplay="true" playsinline></video>
           </div>
         </div>
         <div id="right">
