@@ -73,8 +73,8 @@ class Lander extends LitElement {
         transform: translate(-50%, -50%);
         height: 90%;
         width: 90%;
-        border: 3px solid #313131;
-        background: #212121;
+        border: 5px solid #313131;
+        /*background: #212121;*/
         border-radius: 10px;
         cursor: pointer;
       }
@@ -118,6 +118,7 @@ class Lander extends LitElement {
         font-size: 10vw;
         font-weight: 600;
         color: #e0e0e0;
+        text-shadow: 4px 4px 0 #212121;
         text-align: center;
         user-select: none;
       }
@@ -127,6 +128,7 @@ class Lander extends LitElement {
         font-size: 2.5vw;
         font-weight: 600;
         color: #e0e0e0;
+        text-shadow: 3px 3px 0 #212121;
         text-align: center;
         user-select: none;
       }
@@ -159,8 +161,8 @@ class Lander extends LitElement {
         transform: translate(-50%, -50%);
         height: 100%;
         width: 100%;
-        border: 3px solid #313131;
-        background: #212121;
+        border: 5px solid #313131;
+        /*background: #212121;*/
         border-radius: 10px;
         cursor: pointer;
       }
