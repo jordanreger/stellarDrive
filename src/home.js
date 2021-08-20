@@ -278,7 +278,7 @@ class Lander extends LitElement {
     if (window.location.pathname === "/") {
       return html`
       <div id="page">
-        <video id="background" autoplay="true" />
+        <video id="background" autoplay="true"></video>
       </div>
     `;
     } else {
