@@ -170,14 +170,14 @@ class Lander extends LitElement {
     /* get camera */
     var stream, bg;
     var elements = this.shadowRoot.children[0].children;
-    /*navigator.mediaDevices.getUserMedia({ video: true, facingMode: { exact: "environment" } }).then((stream) => {
+    navigator.mediaDevices.getUserMedia({ video: true, facingMode: { exact: "environment" } }).then((stream) => {
       for(var i = 0; i < elements.length; i++){
         if(elements[i].id === "left"){
           bg = elements[i].children[0].children[0];
           bg.srcObject = stream;
         }
       }
-    });*/
+    });
 
     /* animations */
     var main, secondary, time;
@@ -265,7 +265,7 @@ class Lander extends LitElement {
       <div id="page">
         <div id="left">
           <div id="main">
-            <!--<video id="background" autoplay="true" controls></video>-->
+            <video id="background" autoplay="true" controls></video>
           </div>
         </div>
         <div id="right">
