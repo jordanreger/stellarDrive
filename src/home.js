@@ -181,8 +181,6 @@ class Lander extends LitElement {
       console.log(error);
     })*/
 
-    console.log(navigator);
-
     /* animations */
     var main, secondary, time;
     var left, right;
