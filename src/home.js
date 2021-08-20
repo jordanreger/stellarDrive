@@ -29,8 +29,16 @@ class Lander extends LitElement {
       }
 
       /* page css */
+      #frame {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+      }
+
       #page {
-        background-color: #101010;
         left: 0;
         top: 0;
         width: 100%;
@@ -38,17 +46,67 @@ class Lander extends LitElement {
         position: absolute;
         display: grid;
         grid-auto-columns: 1fr 1fr;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 14fr 1fr;
         grid-template-rows: 1fr;
-        gap: 0px 5vw;
+        gap: 0px 0px;
         grid-template-areas:
-          "left right";
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
+          "music time maps";
+        z-index: 1;
       }
 
-      #left {
+      .center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        z-index: 0;
+      }
+
+      #music {
+        grid-area: music;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 100%;
+        height: 75%;
+        border-top: 5px solid #e0e0e0;
+        border-right: 5px solid #e0e0e0;
+        border-bottom: 5px solid #e0e0e0;
+        border-radius: 0px 25px 25px 0px;
+      }
+
+      #time {
+        grid-area: time;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      #maps {
+        grid-area: maps;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 100%;
+        height: 75%;
+        border-top: 5px solid #e0e0e0;
+        border-left: 5px solid #e0e0e0;
+        border-bottom: 5px solid #e0e0e0;
+        border-radius: 25px 0px 0px 25px;
+      }
+
+      /*#left {
         grid-area: left;
         position: absolute;
         left: 0;
@@ -74,7 +132,7 @@ class Lander extends LitElement {
         height: 90%;
         width: 90%;
         border: 5px solid #313131;
-        /*background: #212121;*/
+        background: #212121;
         border-radius: 10px;
         cursor: pointer;
       }
@@ -111,29 +169,29 @@ class Lander extends LitElement {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-      }
+      }*/
 
       .time {
         font-family: Inter;
-        font-size: 10vw;
+        font-size: 25vw;
         font-weight: 600;
         color: #e0e0e0;
-        text-shadow: 4px 4px 0 #212121;
+        text-shadow: 15px 15px 0 #212121;
         text-align: center;
         user-select: none;
       }
 
       .date {
         font-family: Inter;
-        font-size: 2.5vw;
+        font-size: 5vw;
         font-weight: 600;
         color: #e0e0e0;
-        text-shadow: 3px 3px 0 #212121;
+        text-shadow: 5px 5px 0 #212121;
         text-align: center;
         user-select: none;
       }
 
-      .logo {
+      /*.logo {
         position: absolute;
         top: 5%;
         left: 50%;
@@ -162,31 +220,20 @@ class Lander extends LitElement {
         height: 100%;
         width: 100%;
         border: 5px solid #313131;
-        /*background: #212121;*/
+        background: #212121;
         border-radius: 10px;
         cursor: pointer;
-      }
-
-      #background {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        object-fit: fill;
-      }
+      }*/
     `;
   }
 
   firstUpdated(){
     var elements = this.shadowRoot.children[0].children;
 
-    var stream, bg;
+    var stream;
+    console.log(this.shadowRoot);
+    var bg = this.shadowRoot.children[0].children[0];
     function getCamera() {
-      for(var i = 0; i < elements.length; i++){
-        if(elements[i].id === "background"){
-          bg = elements[i];
-        }
-      }
       navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
           bg.srcObject = stream;
       }).catch(function(error) {
@@ -203,7 +250,7 @@ class Lander extends LitElement {
       ls.setItem("method", "12");
     }
 
-    let timeDiv = elements[2].children[0].children[0].children[0].children;
+    let timeDiv = elements[1].children[1].children[0].children;
     let timeDisplay = timeDiv[0];
     let dateDisplay = timeDiv[1];
 
@@ -239,8 +286,21 @@ class Lander extends LitElement {
   render() {
     if (window.location.pathname === "/") {
       return html`
-      <div id="page">
-        <video id="background" autoplay="true" playsinline></video>
+      <div id="frame">
+        <video id="background" autoplay="true" playsinline="true"></video>
+        <div id="page">
+          <div id="music"></div>
+          <div id="time">
+            <div class="center">
+              <div class="time"></div>
+              <div class="date"></div>
+            </div>
+          </div>
+          <div id="maps"></div>
+        </div>
+      </div>
+      <!--<div id="page">
+
         <div id="left">
           <div id="main">
           </div>
@@ -271,7 +331,7 @@ class Lander extends LitElement {
             <path d="M13 262.999L152.367 228.158C192.176 218.206 233.824 218.206 273.633 228.158L413 262.999" stroke="#E0E0E0" stroke-width="50"/>
           </svg>
         </div>
-      </div>
+      </div>-->
     `;
     } else {
       return undefined;
