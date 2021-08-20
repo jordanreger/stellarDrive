@@ -174,7 +174,7 @@ class Lander extends LitElement {
       for(var i = 0; i < elements.length; i++){
         if(elements[i].id === "left"){
           bg = elements[i].children[0].children[0];
-          bg.srcObject = stream;
+          //bg.srcObject = stream;
         }
       }
     });
