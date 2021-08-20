@@ -265,7 +265,7 @@ class Lander extends LitElement {
       <div id="page">
         <div id="left">
           <div id="main">
-            <video id="background" autoplay="true" controls></video>
+            <!--<video id="background" autoplay="true" controls></video>-->
           </div>
         </div>
         <div id="right">
