@@ -2,7 +2,7 @@
   "name": "stellarDrive",
   "version": "0.0.1",
   "description": "",
-  "main": "index.html",
+  "main": "src/App.js",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html --no-source-maps"
