@@ -78,11 +78,13 @@ class Lander extends LitElement {
         top: 50%;
         transform: translate(0, -50%);
         width: 100%;
-        height: 75%;
-        border-top: 5px solid #e0e0e0;
-        border-right: 5px solid #e0e0e0;
-        border-bottom: 5px solid #e0e0e0;
+        height: 85%;
+        background-color: rgba(33, 33, 33, 0.25);
+        border-top: 5px solid #696969;
+        border-right: 5px solid #696969;
+        border-bottom: 5px solid #696969;
         border-radius: 0px 25px 25px 0px;
+        box-shadow: 0 0 15px #212121;
       }
 
       #time {
@@ -99,11 +101,13 @@ class Lander extends LitElement {
         top: 50%;
         transform: translate(0, -50%);
         width: 100%;
-        height: 75%;
-        border-top: 5px solid #e0e0e0;
-        border-left: 5px solid #e0e0e0;
-        border-bottom: 5px solid #e0e0e0;
+        height: 85%;
+        background-color: rgba(33, 33, 33, 0.25);
+        border-top: 5px solid #696969;
+        border-left: 5px solid #696969;
+        border-bottom: 5px solid #696969;
         border-radius: 25px 0px 0px 25px;
+        box-shadow: 0 0 15px #212121;
       }
 
       /*#left {
@@ -175,8 +179,8 @@ class Lander extends LitElement {
         font-family: Inter;
         font-size: 25vw;
         font-weight: 600;
-        color: #e0e0e0;
-        text-shadow: 15px 15px 0 #212121;
+        color: #999;
+        text-shadow: 0 0 25px #000;
         text-align: center;
         user-select: none;
       }
@@ -185,8 +189,8 @@ class Lander extends LitElement {
         font-family: Inter;
         font-size: 5vw;
         font-weight: 600;
-        color: #e0e0e0;
-        text-shadow: 5px 5px 0 #212121;
+        color: #999;
+        text-shadow: 0 0 15px #000;
         text-align: center;
         user-select: none;
       }
