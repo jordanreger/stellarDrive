@@ -327,13 +327,13 @@ class Lander extends LitElement {
         /*time.style.transition = "opacity 150ms";
         time.style.opacity = "0%";
         time.style.display = "none";*/
-        page.style.transition = "grid-template-columns 150ms";
+        page.style.WebkitTransition = "grid-template-columns 150ms";
         page.style.gridTemplateColumns = "14fr 1fr 1fr";
         page.style.gridTemplateAreas = "music maps";
       }
 
       if(this.startX > this.endX) {
-        page.style.transition = "grid-template-columns 150ms";
+        page.style.WebkitTransition = "grid-template-columns 150ms";
         page.style.gridTemplateColumns = "1fr 14fr 1fr";
         page.style.gridTemplateAreas = "music time maps";
         /*time.style.transitionDelay = "500ms";
@@ -343,13 +343,13 @@ class Lander extends LitElement {
       }
     } else if (div === "maps") {
       if(this.startX > this.endX) {
-        page.style.transition = "grid-template-columns 150ms";
+        page.style.WebkitTransition = "grid-template-columns 150ms";
         page.style.gridTemplateColumns = "1fr 1fr 14fr";
         page.style.gridTemplateAreas = "music maps";
       }
 
       if(this.startX < this.endX) {
-        page.style.transition = "grid-template-columns 150ms";
+        page.style.WebkitTransition = "grid-template-columns 150ms";
         page.style.gridTemplateColumns = "1fr 14fr 1fr";
         page.style.gridTemplateAreas = "music time maps";
       }
