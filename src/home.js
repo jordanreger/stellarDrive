@@ -78,7 +78,7 @@ class Lander extends LitElement {
         top: 50%;
         transform: translate(0, -50%);
         width: 100%;
-        height: 85%;
+        height: 75%;
         background-color: rgba(240, 240, 240, 0.5);
         border-top: 5px solid #f0f0f0;
         border-right: 5px solid #f0f0f0;
@@ -101,7 +101,7 @@ class Lander extends LitElement {
         top: 50%;
         transform: translate(0, -50%);
         width: 100%;
-        height: 85%;
+        height: 75%;
         background-color: rgba(240, 240, 240, 0.5);
         border-top: 5px solid #f0f0f0;
         border-left: 5px solid #f0f0f0;

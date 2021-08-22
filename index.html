@@ -10,6 +10,8 @@
 
     <link rel="manifest" href="/manifest.webmanifest" />
     <script>
+      screen.orientation.lock("landscape");
+      
       if("serviceWorker" in navigator) {
         navigator.serviceWorker.register("serviceWorker.js", { scope: "./" })
       }
