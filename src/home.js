@@ -85,6 +85,7 @@ class Lander extends LitElement {
         border-bottom: 5px solid #f0f0f0;
         border-radius: 0px 25px 25px 0px;
         box-shadow: 0 0 15px #212121;
+        z-index: 2;
       }
 
       #time {
@@ -92,7 +93,6 @@ class Lander extends LitElement {
         position: absolute;
         width: 100%;
         height: 100%;
-        display: none;
       }
 
       #maps {
@@ -109,6 +109,7 @@ class Lander extends LitElement {
         border-bottom: 5px solid #f0f0f0;
         border-radius: 25px 0px 0px 25px;
         box-shadow: 0 0 15px #212121;
+        z-index: 2;
       }
 
       /*#left {
@@ -184,6 +185,7 @@ class Lander extends LitElement {
         text-shadow: 0 0 25px #000;
         text-align: center;
         user-select: none;
+        z-index: 1;
       }
 
       .date {
@@ -194,6 +196,7 @@ class Lander extends LitElement {
         text-shadow: 0 0 15px #000;
         text-align: center;
         user-select: none;
+        z-index: 1;
       }
 
       /*.logo {
