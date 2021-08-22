@@ -1,5 +1,5 @@
 let cacheName = "stellarDrive-0.0.5";
-let filesToCache = /*["/", "./index.html", "./src/App.js", "./src/home.js"]*/ [];
+let filesToCache = ["/", "./index.html", "./src/App.js", "./src/home.js"];
 
 /* Start the service worker and cache all of the app's content */
 self.addEventListener("install", (e) => {
