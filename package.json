@@ -1,15 +1,15 @@
 {
   "name": "stellarDrive",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "",
-  "main": "src/App.js",
+  "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html --no-source-maps --public-url /"
+    "build": "parcel build index.html --no-source-maps"
   },
   "dependencies": {
     "latt": "0.0.4",
-    "lit": "2.0.0-rc.2",
+    "lit": "^2.0.0-rc.2",
     "lit-element": "2.2.1",
     "lit-html": "1.4.1"
   },

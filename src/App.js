@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html, css } from "lit";
 import "latt";
 
 window.onload = () => {
