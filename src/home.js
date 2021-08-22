@@ -92,6 +92,7 @@ class Lander extends LitElement {
         position: absolute;
         width: 100%;
         height: 100%;
+        display: none;
       }
 
       #maps {
@@ -231,12 +232,19 @@ class Lander extends LitElement {
     `;
   }
 
-  firstUpdated(){
+  constructor() {
+    super();
+    this.startX = 0;
+    this.endX = 0;
+  }
+
+  firstUpdated() {
     var elements = this.shadowRoot.children[0].children;
 
     var stream;
-    console.log(this.shadowRoot);
-    var bg = this.shadowRoot.children[0].children[0];
+    var bg = elements[0];
+    var music = elements[1].children[0];
+    var maps = elements[1].children[2];
     function getCamera() {
       navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
           bg.srcObject = stream;
@@ -246,6 +254,25 @@ class Lander extends LitElement {
     }
 
     window.addEventListener("load", getCamera(), false);
+
+    music.addEventListener('touchstart', e => {
+      this.startX = e.changedTouches[0].screenX;
+    });
+
+    music.addEventListener('touchend', e => {
+      this.endX = e.changedTouches[0].screenX;
+      this.handleGesture("music");
+    });
+
+    maps.addEventListener('touchstart', e => {
+      this.startX = e.changedTouches[0].screenX;
+    });
+
+    maps.addEventListener('touchend', e => {
+      this.endX = e.changedTouches[0].screenX;
+      this.handleGesture("maps");
+    });
+
 
     /* clock */
     let ls = window.localStorage;
@@ -273,7 +300,6 @@ class Lander extends LitElement {
         minutes = "0" + date.getMinutes();
       };
       let time = hours + ":" + minutes;
-      //timeDisplay.style.fontFamily = "Space Mono";
       timeDisplay.innerHTML = time;
     }
 
@@ -286,6 +312,48 @@ class Lander extends LitElement {
     getDate();
     setInterval(() => { getTime(ls.getItem("method")); getDate(); }, 1000);
     /* /clock */
+  }
+
+  handleGesture(div) {
+    var elements = this.shadowRoot.children[0].children;
+
+    var page = elements[1];
+    var time = elements[1].children[1].children[0];
+    var music = elements[1].children[0];
+    var maps = elements[1].children[2];
+
+    if(div === "music") {
+      if(this.startX < this.endX) {
+        /*time.style.transition = "opacity 150ms";
+        time.style.opacity = "0%";
+        time.style.display = "none";*/
+        page.style.transition = "grid-template-columns 150ms";
+        page.style.gridTemplateColumns = "14fr 1fr 1fr";
+        page.style.gridTemplateAreas = "music maps";
+      }
+
+      if(this.startX > this.endX) {
+        page.style.transition = "grid-template-columns 150ms";
+        page.style.gridTemplateColumns = "1fr 14fr 1fr";
+        page.style.gridTemplateAreas = "music time maps";
+        /*time.style.transitionDelay = "500ms";
+        time.style.display = "block";
+        time.style.transition = "opacity 150ms";
+        time.style.opacity = "100%";*/
+      }
+    } else if (div === "maps") {
+      if(this.startX > this.endX) {
+        page.style.transition = "grid-template-columns 150ms";
+        page.style.gridTemplateColumns = "1fr 1fr 14fr";
+        page.style.gridTemplateAreas = "music maps";
+      }
+
+      if(this.startX < this.endX) {
+        page.style.transition = "grid-template-columns 150ms";
+        page.style.gridTemplateColumns = "1fr 14fr 1fr";
+        page.style.gridTemplateAreas = "music time maps";
+      }
+    }
   }
 
   render() {
